@@ -1,0 +1,20 @@
+#!/bin/sh -e
+#
+# GPIO init script
+#
+
+case "$1" in
+  start)
+    echo "GPIO init"
+    /usr/local/bin/gpio mode 0 out
+  ;;
+  stop)
+  ;;
+  *)
+    N=/etc/init.d/gpioinit
+    echo "Usage: $N {start}"
+    exit 1
+  ;;
+esac
+
+exit 0

@@ -1,0 +1,11 @@
+<admissionsurveyserver>
+	<record questionid="1" outputfile="results_seamlesscare.csv" />
+	<record questionid="2" outputfile="results_seamlesscare.csv" />
+	<record questionid="3" outputfile="results_seamlesscare.csv" />
+	<record questionid="4" outputfile="results_seamlesscare.csv" />
+	<record questionid="5" outputfile="results_seamlesscare.csv" />
+	<record questionid="6" outputfile="results_seamlesscare.csv" />
+	<record questionid="7" outputfile="results_tabac.csv" />
+	<record questionid="8" outputfile="results_tabac.csv" />
+	<record questionid="9" outputfile="results_tabac.csv" />
+</admissionsurveyserver>

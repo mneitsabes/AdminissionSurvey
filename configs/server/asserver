@@ -1,0 +1,28 @@
+#!/bin/sh -e
+#
+# AdmissionSurveyServer start script
+#
+
+DAEMON="sudo -b -u admissionsurvey /home/pi/Desktop/AdmissionSurveyServer/startserver.sh"
+DESC="Admission Survey Server"
+
+case "$1" in
+  start)
+    echo "Starting $DESC"
+    $DAEMON
+  ;;
+  stop)
+    echo "Stopping $DESC"
+    kill -9 `ps aux | grep AdmissionSurveyServer | head -1 | awk '{ print $2 }'` #for the sudo -b (in command)
+    kill -9 `ps aux | grep AdmissionSurveyServer | head -1 | awk '{ print $2 }'` #for the startserver.sh (in path)
+    kill -9 `ps aux | grep AdmissionSurveyServer | head -1 | awk '{ print $2 }'` #for the server process
+  ;;
+  *)
+    N=/etc/init.d/asserver
+    echo "Usage: $N {start | stop}"
+    exit 1
+  ;;
+esac
+
+exit 0
+

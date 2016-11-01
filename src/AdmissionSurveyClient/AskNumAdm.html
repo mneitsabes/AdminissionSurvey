@@ -1,0 +1,61 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script type="text/javascript" src="qrc:/jquery.js"></script>
+		<script type="text/javascript" src="qrc:/jquery-validate.js"></script>
+		
+	</head>
+	<body>
+		<link rel="stylesheet" type="text/css" href="qrc:/style_default.css" />
+		<style>
+			.error {
+				background-color:red; 
+				border: 1px dashed red;
+				color:white;
+			}
+			
+			#sending_server {
+				display:none;
+			}
+		</style>
+		<div class="section">Encodage du numéro d'admission</div>
+		<div id="content">
+				<form id="form">
+					<div id="ask_form">Veuillez entrer le numéro d'admission du patient : <input type="text" size="7" id="num_adm" data-required data-pattern="^[0-9]{7}$" /></div>
+				</form>
+		</div>
+	</body>
+	
+	<script type="text/javascript">
+		$('#form').validate({
+			onSubmit : true,
+			valid : function() {
+				var numAdm = $('#num_adm').val();
+				if(numAdm == "0000000")
+					globalView.transfertString("RESET_SURVEY");
+				else
+				{
+					$('#ask_form').html("Les données sont envoyées au serveur, veuillez patienter...");	
+					globalView.transfertString("SUBMIT_NUMADM:" + numAdm);
+				}
+			},
+			eachInvalidField : function() {
+				var numAdm = $('#num_adm').val();
+				if(numAdm == "0")
+					globalView.transfertString("RESET_SURVEY");
+				else
+					$(this).closest('input').addClass('error');
+			}
+		});
+		
+		$(document).ready(
+			$('#form').submit(function(e){
+				e.preventDefault();
+			})
+		); 
+		
+		$(document).ready(
+			$('#num_adm').focus()
+		);				
+	</script>
+</html>

@@ -1,0 +1,27 @@
+#!/bin/sh -e
+#
+# SSHOnDemand start script
+#
+
+DAEMON="sudo -b -u pi /home/pi/Desktop/ssh_ondemand.sh"
+DESC="SSH On demand"
+
+case "$1" in
+  start)
+    echo "Starting $DESC"
+    $DAEMON
+  ;;
+  stop)
+    echo "Stopping $DESC"
+    kill -9 `ps aux | grep ssh_ondemand.sh | head -1 | awk '{ print $2 }'` #for the sudo -b (in command)
+    kill -9 `ps aux | grep ssh_ondemand.sh | head -1 | awk '{ print $2 }'` #for the command
+  ;;
+  *)
+    N=/etc/init.d/ssh-ondemand
+    echo "Usage: $N {start | stop}"
+    exit 1
+  ;;
+esac
+
+exit 0
+

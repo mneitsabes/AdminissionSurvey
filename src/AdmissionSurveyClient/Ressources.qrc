@@ -1,0 +1,25 @@
+<RCC>
+    <qresource prefix="/" >
+        <file>images/lg_en_128.png</file>
+        <file>images/lg_fr_128.png</file>
+        <file>images/lg_nl_128.png</file>
+        <file>images/logo_display.png</file>
+        <file>ChooseLanguage.html</file>
+        <file>jquery.js</file>
+        <file>images/logo_goodbye.png</file>
+        <file>EndMessage_FR.html</file>
+        <file>AskNumAdm.html</file>
+        <file>jquery-validate.js</file>
+        <file>ResponseYesNo_EN.html</file>
+        <file>ResponseYesNo_FR.html</file>
+        <file>ResponseYesNo_NL.html</file>
+        <file>ResponseYesNoUnknown_EN.html</file>
+        <file>ResponseYesNoUnknown_FR.html</file>
+        <file>ResponseYesNoUnknown_NL.html</file>
+        <file>style_button.css</file>
+        <file>style_default.css</file>
+        <file>EndMessage_EN.html</file>
+        <file>EndMessage_NL.html</file>
+        <file>buttonSelected.js</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,132 @@
+﻿<?xml  version="1.0" encoding="UTF-8"?>
+<survey>
+	<general devmode="1">
+		<font family="Verdana" />
+		<server addr="192.168.25.10" port="5728" />
+		<gui bordersize="30" bordercolor="#454753" />
+		<path normal="records_save.csv" error="records_error.csv" />
+	</general>
+	<questions>
+		<question id="1">
+			<fr path="Q1_FR.html" />
+			<nl path="Q1_NL.html" />
+			<en path="Q1_EN.html" />
+			<responses type="declared" disposition="horizontal">
+				<response tag="RESPONSE:PATIENT" value="P">
+					<fr label="Patient" />
+					<nl label="Patiënt" />
+					<en label="Patient" />
+				</response>
+				<response tag="RESPONSE:ACCOMPAGNANT" value="A">
+					<fr label="Accompagnant" />
+					<nl label="Begeleidende" />
+					<en label="Relative" />
+				</response>
+			</responses>
+		</question>
+		<question id="2">
+			<fr path="Q2_FR.html" />
+			<nl path="Q2_NL.html" />
+			<en path="Q2_EN.html" />
+			<responses type="yes_no">
+				<response tag="RESPONSE:NO" jumpto="7" />
+			</responses>
+		</question>
+		<question id="3">
+			<fr path="Q3_FR.html" />
+			<nl path="Q3_NL.html" />
+			<en path="Q3_EN.html" />
+			<responses type="yes_no_unknown">
+				<response tag="RESPONSE:NO" jumpto="5" />
+				<response tag="RESPONSE:UNKNOWN" jumpto="5" />
+			</responses>
+		</question>
+		<question id="4">
+			<fr path="Q4_FR.html" />
+			<nl path="Q4_NL.html" />
+			<en path="Q4_EN.html" />
+			<responses type="yes_no_unknown">
+				<response tag="RESPONSE:YES" jumpto="7" />
+			</responses>
+		</question>
+		<question id="5">
+			<fr path="Q5_FR.html" />
+			<nl path="Q5_NL.html" />
+			<en path="Q5_EN.html" />
+			<responses type="yes_no_unknown">
+				<response tag="RESPONSE:YES" jumpto="7" />
+			</responses>
+		</question>
+		<question id="6">
+			<fr path="Q6_FR.html" />
+			<nl path="Q6_NL.html" />
+			<en path="Q6_EN.html" />
+			<responses type="yes_no_unknown" />
+		</question>
+		<question id="7">
+			<fr path="Q7_FR.html" />
+			<nl path="Q7_NL.html" />
+			<en path="Q7_EN.html" />
+			<responses type="declared" disposition="horizontal">
+				<response tag="RESPONSE:SMOKER" value="F">
+					<fr label="Fumeur" />
+					<nl label="Roker" />
+					<en label="Smoker" />
+				</response>
+				<response tag="RESPONSE:NO_SMOKER" value="NF" jumpto="END">
+					<fr label="Non fumeur" />
+					<nl label="Niet roker" />
+					<en label="No-smoker" />
+				</response>
+				<response tag="RESPONSE:EX_SMOKER" value="EF" jumpto="END">
+					<fr label="Ex fumeur" />
+					<nl label="Ex roker" />
+					<en label="Ex smoker" />
+				</response>
+			</responses>
+		</question>
+		<question id="8">
+			<fr path="Q8_FR.html" />
+			<nl path="Q8_NL.html" />
+			<en path="Q8_EN.html" />
+			<responses type="declared">
+				<response tag="RESPONSE:MIN_1_M" value="A">
+					<fr label="&lt; 1 mois" />
+					<nl label="&lt; 1 maand" />
+					<en label="&lt; 1 month" />
+				</response>
+				<response tag="RESPONSE:MIN_6_M" value="B">
+					<fr label="&lt; 6 mois" />
+					<nl label="&lt; 6 maanden" />
+					<en label="&lt; 6 months" />
+				</response>
+				<response tag="RESPONSE:MIN_1_Y" value="C">
+					<fr label="&lt; 1 an" />
+					<nl label="&lt; 1 jaar" />
+					<en label="&lt; 1 year" />
+				</response>
+				<response tag="RESPONSE:PLUS_1_Y" value="D">
+					<fr label="1 an ou plus" />
+					<nl label="1 jaar en meer" />
+					<en label="1 year and mmore" />
+				</response>
+				<response tag="RESPONSE:PLUS_5_Y" value="E">
+					<fr label="&gt; 5 ans" />
+					<nl label="&gt; 5 jaren" />
+					<en label="&gt; 5 years" />
+				</response>
+				<response tag="RESPONSE:PLUS_10_Y" value="F">
+					<fr label="&gt; 10 ans" />
+					<nl label="&gt; 10 jaren" />
+					<en label="&gt; 10 years" />
+				</response>
+			</responses>
+		</question>
+		<question id="9">
+			<fr path="Q9_FR.html" />
+			<nl path="Q9_NL.html" />
+			<en path="Q9_EN.html" />
+			<responses type="yes_no" />
+		</question>
+	</questions>
+</survey>
